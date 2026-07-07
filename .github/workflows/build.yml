@@ -23,10 +23,10 @@ jobs:
 
     - name: Build with PyInstaller
       run: |
-        pyinstaller --onedir --windowed --collect-all rasterio --collect-all rio_cogeo cog_converter.py
+        pyinstaller --onedir --windowed --collect-all rasterio --collect-all rio_cogeo cogConverter.py
 
     - name: Upload Windows Build Artifact
       uses: actions/upload-artifact@v7
       with:
         name: COG-Converter-Windows
-        path: dist/cog_converter
+        path: dist/cogConverter
