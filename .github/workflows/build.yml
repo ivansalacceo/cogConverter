@@ -9,10 +9,10 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v7
       with:
         python-version: '3.10'
 
@@ -26,7 +26,7 @@ jobs:
         pyinstaller --onedir --windowed --collect-all rasterio --collect-all rio_cogeo cog_converter.py
 
     - name: Upload Windows Build Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: COG-Converter-Windows
         path: dist/cog_converter
